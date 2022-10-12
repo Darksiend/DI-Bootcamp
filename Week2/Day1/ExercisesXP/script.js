@@ -13,5 +13,5 @@ let myWatchedSeriesLength = myWatchedSeries.length
 let myWatchedSeriesSentence = myWatchedSeries[0] + myWatchedSeries[2]
 
 console.log(
-  `I watched ${myWatchedSeriesLength} series : ${myWatchedSeriesSentence}`
+  `I watched ${myWatchedSeriesLength} series : ${myWatchedSeriesSentence}.`
 )
