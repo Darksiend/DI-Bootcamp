@@ -43,66 +43,68 @@ console.log(3 + 4 + "5")
 
 //Ex5
 
-typeof 15
-// Prediction:
+console.log(typeof 15)
+// Prediction: number
+// Actual: number
+
+console.log(typeof 5.5)
+// Prediction: number
 // Actual:
 
-typeof 5.5
-// Prediction:
+console.log(typeof NaN)
+// Prediction:number
+// Actual:number
+
+console.log(typeof "hello")
+// Prediction:String
+// Actual:String
+
+console.log(typeof true)
+// Prediction:Boolean
+// Actual:Boolean
+
+console.log(typeof (1 != 2))
+// Prediction:Boolean
+// Actual:Boolean
+
+console.log("hamburger" + "s")
+// Prediction:hamburgers
+// Actual:hamburgers
+
+console.log("hamburgers" - "s")
+// Prediction:Nan
+// Actual:Nan
+
+console.log("1" + "3")
+// Prediction:13
+// Actual:13
+
+console.log("1" - "3")
+// Prediction:-2
+// Actual:-2
+
+console.log("johnny" + 5)
+// Prediction:johnny5
 // Actual:
 
-typeof NaN
-// Prediction:
-// Actual:
+console.log("johnny" - 5)
+// Prediction:Nan
+// Actual:Nan
 
-typeof "hello"
-// Prediction:
-// Actual:
+console.log(99 * "hello")
+// Prediction:Nan
+// Actual:Nan
 
-typeof true
-// Prediction:
-// Actual:
+console.log(1 != 1)
+// Prediction:False
+// Actual:False
 
-typeof (1 != 2)
-// Prediction:
-// Actual:
+console.log(1 == "1")
+// Prediction:true
+// Actual:treu
 
-"hamburger" + "s"
-// Prediction:
-// Actual:
+console.log(1 === "1")
+// Prediction:false
+// Actual:false
 
-"hamburgers" - "s"
-// Prediction:
-// Actual:
-
-"1" + "3"
-// Prediction:
-// Actual:
-
-"1" - "3"
-// Prediction:
-// Actual:
-
-"johnny" + 5
-// Prediction:
-// Actual:
-
-"johnny" - 5
-// Prediction:
-// Actual:
-
-99 * "hello"
-// Prediction:
-// Actual:
-
-1 != 1
-// Prediction:
-// Actual:
-
-1 == "1"
-// Prediction:
-// Actual:
-
-1 === "1"
-// Prediction:
-// Actual:
+//Ex6
