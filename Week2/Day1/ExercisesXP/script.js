@@ -15,3 +15,5 @@ let myWatchedSeriesSentence = myWatchedSeries[0] + myWatchedSeries[2]
 console.log(
   `I watched ${myWatchedSeriesLength} series : ${myWatchedSeriesSentence}.`
 )
+
+//Ex3
