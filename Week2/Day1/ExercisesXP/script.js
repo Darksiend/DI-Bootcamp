@@ -17,3 +17,6 @@ console.log(
 )
 
 //Ex3
+
+let tempCel = 36.6
+console.log(`${tempCel}°C is ${(tempCel / 5) * 9 + 32}`)
