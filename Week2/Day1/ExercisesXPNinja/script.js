@@ -20,3 +20,19 @@ console.log(true === false)
 //false
 console.log(true != true)
 //false
+
+//Ex2
+
+let numbers = prompt("Put numbers separeted by ,")
+console.log(numbers)
+
+function sum(numbers) {
+  let arr = []
+  arr = numbers.split(",")
+  let sum = 0
+  for (let i = 0; i < arr.length; i++) {
+    sum += Number(arr[i])
+  }
+  console.log(sum)
+}
+sum(numbers)
