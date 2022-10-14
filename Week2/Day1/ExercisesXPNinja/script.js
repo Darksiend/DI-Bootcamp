@@ -23,16 +23,58 @@ console.log(true != true)
 
 //Ex2
 
-let numbers = prompt("Put numbers separeted by ,")
-console.log(numbers)
+// let numbers = prompt("Put numbers separeted by ,")
+// console.log(numbers)
 
-function sum(numbers) {
-  let arr = []
-  arr = numbers.split(",")
-  let sum = 0
-  for (let i = 0; i < arr.length; i++) {
-    sum += Number(arr[i])
-  }
-  console.log(sum)
+// function sum(numbers) {
+//   let arr = []
+//   arr = numbers.split(",")
+//   let sum = 0
+//   for (let i = 0; i < arr.length; i++) {
+//     sum += Number(arr[i])
+//   }
+//   console.log(sum)
+// }
+// sum(numbers)
+
+//Ex3
+
+// let sent = prompt("Put Something with Nemo")
+
+// if (sent.includes("Nemo")) {
+//   console.log(`Nemp Position is: ${sent.indexOf("Nemo")}`)
+// } else {
+//   console.log("I cant find Nemo")
+// }
+
+//Ex4
+
+let num = 10
+let str = "Boom"
+
+let arr = str.split("")
+
+if (num < 2) {
+  str = str.toLowerCase
 }
-sum(numbers)
+console.log(arr)
+if (num > 2) {
+  for (let i = 0; i < num - 2; i++) {
+    arr.splice(1, 0, "o")
+  }
+  str = arr.join("")
+}
+
+if (num % 2 === 0) {
+  arr.push("!")
+  str = arr.join("")
+}
+
+if (num % 5 === 0) {
+  str = str.toUpperCase()
+}
+
+if (num % 2 === 0 && num % 5 === 0) {
+  str = str.toUpperCase() + "!"
+}
+console.log(str)
