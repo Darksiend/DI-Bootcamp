@@ -78,3 +78,5 @@ if (num % 2 === 0 && num % 5 === 0) {
   str = str.toUpperCase() + "!"
 }
 console.log(str)
+
+//Done
