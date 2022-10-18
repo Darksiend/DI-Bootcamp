@@ -18,3 +18,17 @@ switch (lang) {
     console.log("01110011 01101111 01110010 01110010 01111001")
     break
 }
+
+//Ex2
+
+let num = prompt("Your grade is: ")
+
+if (num > 90) {
+  console.log("A")
+} else if (num <= 90 && num > 80) {
+  console.log("B")
+} else if (num >= 70 && num <= 80) {
+  console.log("C")
+} else if (num < 70) {
+  console.log("D")
+}
