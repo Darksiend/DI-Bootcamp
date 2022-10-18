@@ -21,3 +21,6 @@ if (zip.length === 5) {
     }
   }
 }
+
+if (/[0-9]/.test(zip)) {
+}
