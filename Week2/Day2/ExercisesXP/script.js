@@ -21,3 +21,13 @@ if (newDog === "Chihuahua") {
 } else {
   console.log("I dont care, I prefer cats")
 }
+
+//Ex3
+
+let number = prompt("Put The Number")
+
+if (number % 2 === 0) {
+  console.log(`${number} is an even number`)
+} else {
+  console.log(`${number} is an odd number`)
+}
