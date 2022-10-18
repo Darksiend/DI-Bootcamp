@@ -7,3 +7,8 @@ fruits.push("Kiwi")
 fruits.splice(0, 1)
 fruits.reverse()
 console.log(fruits)
+
+//Ex2
+
+const moreFruits = ["Banana", ["Apples", ["Oranges"], "Blueberries"]]
+console.log(moreFruits[1][1][0])
