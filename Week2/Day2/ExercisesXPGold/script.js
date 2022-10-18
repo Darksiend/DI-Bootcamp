@@ -32,3 +32,13 @@ if (num > 90) {
 } else if (num < 70) {
   console.log("D")
 }
+
+//Ex3
+let verb = prompt("Put a verb")
+
+if (verb.length <= 2) {
+  console.log(verb)
+} else if (verb.length >= 3 && !verb.endsWith("ing")) {
+  verb = verb + "ing"
+  console.log(verb)
+}
