@@ -38,7 +38,41 @@ for (i = 0; i < colors.length; i++) {
 
 //Ex3
 
-let number;
-do {
-  number = prompt("Put a number > 10");
-} while (number < 10 && typeof number != "number");
+// let number;
+// do {
+//   number = prompt("Put a number > 10");
+// } while (number < 10 && typeof number != "number");
+
+//Ex 4
+
+const building = {
+  numberOfFloors: 4,
+  numberOfAptByFloor: {
+    firstFloor: 3,
+    secondFloor: 4,
+    thirdFloor: 9,
+    fourthFloor: 2,
+  },
+  nameOfTenants: ["Sarah", "Dan", "David"],
+  numberOfRoomsAndRent: {
+    sarah: [3, 990],
+    dan: [4, 1000],
+    david: [1, 500],
+  },
+};
+
+console.log(building.numberOfFloors);
+console.log(
+  `on first floor ${building.numberOfAptByFloor.firstFloor} and on third ${building.numberOfAptByFloor.thirdFloor}`
+);
+
+console.log(Object.keys(building.numberOfRoomsAndRent));
+
+let namesOfTenants = Object.keys(building.numberOfRoomsAndRent);
+
+console.log(`name of the second tenant: ${namesOfTenants[1]}`);
+console.log(
+  building.numberOfRoomsAndRent.sarah[1] +
+    building.numberOfRoomsAndRent.david[1] >
+    building.numberOfRoomsAndRent.dan + 1200
+);
