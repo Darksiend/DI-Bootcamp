@@ -8,9 +8,10 @@ for (i = 0; i < 6; i++) {
 
 //With 2 Loops
 let str = "";
-for (i = 0; i < 4; i++) {
-  str += "*";
-  for (j = 0; j < i; j++) {
+for (i = 0; i < 5; i++) {
+  for (i = 0; i < 5; i++) {
+    str += "*";
     console.log(str);
   }
+  print("\n");
 }
