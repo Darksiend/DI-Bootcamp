@@ -69,6 +69,7 @@ console.log(
 console.log(Object.keys(building.numberOfRoomsAndRent));
 
 let namesOfTenants = Object.keys(building.numberOfRoomsAndRent);
+console.log(building.key);
 
 console.log(`name of the second tenant: ${namesOfTenants[1]}`);
 console.log(
@@ -76,3 +77,34 @@ console.log(
     building.numberOfRoomsAndRent.david[1] >
     building.numberOfRoomsAndRent.dan + 1200
 );
+
+console.log(building.numberOfRoomsAndRent);
+
+//Ex5
+
+const family = {
+  mother: "Katya",
+  father: "Bob",
+  brother: "Alon",
+};
+
+for (key in family) {
+  console.log(key);
+}
+
+//Ex6
+
+const details = {
+  my: "name",
+  is: "Rudolf",
+  the: "raindeer",
+};
+
+let sentence = "";
+
+for (key in details) {
+  sentence += key + " ";
+  sentence += details[key] + " ";
+}
+
+console.log(sentence);
