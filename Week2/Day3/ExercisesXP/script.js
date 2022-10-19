@@ -108,3 +108,15 @@ for (key in details) {
 }
 
 console.log(sentence);
+
+//Ex7
+
+const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
+
+let currentName = "";
+
+for (i = 0; i < names.length; i++) {
+  currentName += names[i][0];
+}
+
+console.log(currentName.split("").sort());
