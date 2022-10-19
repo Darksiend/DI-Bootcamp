@@ -37,3 +37,8 @@ for (i = 0; i < colors.length; i++) {
 }
 
 //Ex3
+
+let number;
+do {
+  number = prompt("Put a number > 10");
+} while (number < 10 && typeof number != "number");
