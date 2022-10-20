@@ -117,3 +117,12 @@ function changeEnough(itemPrice, amountOfChange) {
 }
 
 console.log(changeEnough(14.11, [2, 100, 0, 0]));
+
+//Ex6
+
+function hotelCost() {
+  do {
+    numberOfNights = prompt("Please put number of nights");
+  } while (isNaN(numberOfNights));
+  return numberOfNights * 140;
+}
