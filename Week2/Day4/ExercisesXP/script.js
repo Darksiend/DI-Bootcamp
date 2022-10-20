@@ -84,7 +84,8 @@ let shoppingList = ["banana", "orange", "apple"];
 function myBill() {
   let price = 0;
   for (i = 0; i < shoppingList.length; i++) {
-    if (shoppingList[i] in stock) {
+    if (shoppingList[i] in stock && stock[shoppingList[i]] > 0) {
+      stock[shoppingList[i]] -= 1;
       price += prices[shoppingList[i]];
     }
   }
@@ -92,4 +93,6 @@ function myBill() {
 }
 
 let price = myBill();
-console.log(price);
+
+console.log(`Price of ypur Shopping list is: ${price} `);
+console.log(stock);
