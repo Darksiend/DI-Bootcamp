@@ -95,4 +95,25 @@ function myBill() {
 let price = myBill();
 
 console.log(`Price of ypur Shopping list is: ${price} `);
-console.log(stock);
+
+//Ex5
+
+// A quarters is 0.25
+// A dimes is 0.10
+// A nickel is 0.05
+// A penny is 0.01
+
+function changeEnough(itemPrice, amountOfChange) {
+  let amount =
+    amountOfChange[0] * 0.25 +
+    amountOfChange[1] * 0.1 +
+    amountOfChange[2] * 0.05 +
+    amountOfChange[3] * 0.01;
+  if (amount > itemPrice) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(changeEnough(14.11, [2, 100, 0, 0]));
