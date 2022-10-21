@@ -1,22 +1,23 @@
 //Daily Challenge
-let words = ["Hello", "World", "in", "a", "frame"];
-let length = 0;
+
+let promtString = prompt("Put Words separeted by commas");
+
+let words = promtString.split(",");
+let maxLength = 0;
 for (let i = 0; i < words.length; i++) {
-  if (words[i].length > length) {
-    length = words[i].length;
+  if (words[i].length > maxLength) {
+    maxLength = words[i].length;
   }
 }
 
-let patternBorder = "";
-
-for (let i = 0; i < length; i++) {
+for (let i = 0; i < words.length; i++) {
   if (i === 0) {
-    console.log("*".repeat(length + 2));
+    console.log("*".repeat(maxLength + 2));
   }
 
-  console.log("*" + words[i] + " ".repeat(length - words[i].length) + "*");
+  console.log("*" + words[i] + " ".repeat(maxLength - words[i].length) + "*");
 
-  if (i === length - 1) {
-    console.log("*".repeat(length + 2));
+  if (i === words.length - 1) {
+    console.log("*".repeat(maxLength + 2));
   }
 }
