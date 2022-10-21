@@ -10,8 +10,8 @@ console.log(number);
 //Ex2
 
 function capitalize(string) {
-  arr1 = string.split("");
-  arr2 = string.split("");
+  let arr1 = string.split("");
+  let arr2 = string.split("");
   for (i = 0; i < arr1.length; i++) {
     if (i % 2 === 0 && i != 0) {
       arr1[i] = arr1[i].toLowerCase();
@@ -30,3 +30,18 @@ function capitalize(string) {
 }
 
 console.log(capitalize("fdbjkxv"));
+
+//Ex3
+
+function isPalindrome(string) {
+  let arr = string.split("");
+  console.log(arr);
+  for (i = 0; i < arr.length; i++) {
+    if (indexOf(arr[i]) == (arr.length - 1) / 2) {
+      let center = indexOf(arr[i]);
+    }
+  }
+  console.log(center);
+}
+
+isPalindrome("madam");
