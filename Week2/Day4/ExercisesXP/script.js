@@ -120,22 +120,15 @@ console.log(changeEnough(14.11, [2, 100, 0, 0]));
 
 //Ex6
 
-function hotelCost() {
-  do {
-    numberOfNights = prompt("Please put number of nights");
-  } while (isNaN(numberOfNights));
+function hotelCost(numberOfNights) {
   return numberOfNights * 140;
 }
 
-function planeRideCost() {
+function planeRideCost(destination) {
   const prices = {
     london: 183,
     paris: 220,
   };
-  do {
-    destination = prompt("Whats your destination?");
-    destination.toString();
-  } while (!isNaN(destination));
 
   if (destination.toLowerCase() in prices) {
     return prices[destination];
@@ -144,4 +137,33 @@ function planeRideCost() {
   }
 }
 
-function rentalCarCost() {}
+function rentalCarCost(numberOfDays) {
+  if (numberOfDays > 10) {
+    return numberOfDays * 40 * 0.95;
+  } else {
+    return numberOfDays * 40;
+  }
+}
+
+function totalVacationCost() {
+  do {
+    numberOfNights = prompt("Please put number of nights");
+  } while (isNaN(numberOfNights));
+
+  do {
+    destination = prompt("Whats your destination?");
+    destination.toString();
+  } while (!isNaN(destination));
+
+  do {
+    numberOfDays = prompt("Please put number of days:");
+  } while (isNaN(numberOfDays));
+
+  cost =
+    hotelCost(numberOfNights) +
+    planeRideCost(destination) +
+    rentalCarCost(numberOfDays);
+  return cost;
+}
+
+console.log(`Cost is: ${totalVacationCost()}$`);
