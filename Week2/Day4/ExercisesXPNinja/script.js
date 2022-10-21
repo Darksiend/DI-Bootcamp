@@ -10,15 +10,23 @@ console.log(number);
 //Ex2
 
 function capitalize(string) {
-  arr = string.split("");
-  for (i = 0; i < arr.length; i++) {
+  arr1 = string.split("");
+  arr2 = string.split("");
+  for (i = 0; i < arr1.length; i++) {
     if (i % 2 === 0 && i != 0) {
-      arr[i] = arr[i].toLowerCase();
+      arr1[i] = arr1[i].toLowerCase();
     } else {
-      arr[i] = arr[i].toUpperCase();
+      arr1[i] = arr1[i].toUpperCase();
     }
   }
-  return arr.join("");
+  for (i = 0; i < arr2.length; i++) {
+    if (!(i % 2 === 0) && i != 0) {
+      arr2[i] = arr2[i].toLowerCase();
+    } else {
+      arr2[i] = arr2[i].toUpperCase();
+    }
+  }
+  return arr1.join("") + "," + arr2.join("");
 }
 
 console.log(capitalize("fdbjkxv"));
