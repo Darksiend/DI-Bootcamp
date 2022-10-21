@@ -96,3 +96,8 @@ let price = myBill();
 
 console.log(`Price of ypur Shopping list is: ${price} `);
 console.log(stock);
+
+//Ex5
+amountOfChange = [25, 20, 5, 0];
+
+function changeEnough(itemPrice, amountOfChange) {}
