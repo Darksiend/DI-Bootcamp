@@ -36,12 +36,25 @@ console.log(capitalize("fdbjkxv"));
 function isPalindrome(string) {
   let arr = string.split("");
   console.log(arr);
+  let center;
   for (i = 0; i < arr.length; i++) {
-    if (indexOf(arr[i]) == (arr.length - 1) / 2) {
-      let center = indexOf(arr[i]);
+    if (arr.indexOf(arr[i]) == (arr.length - 1) / 2) {
+      center = arr.indexOf(arr[i]);
     }
   }
   console.log(center);
+  console.log(arr.slice(0, center));
+  console.log(arr.slice(center + 1).reverse());
+  if (
+    arr.slice(0, center).toString() ===
+    arr
+      .slice(center + 1)
+      .reverse()
+      .toString()
+  ) {
+    return true;
+  } else {
+    return false;
+  }
 }
-
-isPalindrome("madam");
+console.log(isPalindrome("amadama"));
