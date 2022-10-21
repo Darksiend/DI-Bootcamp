@@ -35,3 +35,34 @@ function swap(sent) {
 }
 
 swap("The Quick Brown Fox");
+
+//Ex4
+
+function isOmnipresent() {
+  let arr = [
+    [
+      [1, 1],
+      [1, 3],
+      [5, 1],
+      [6, 1],
+    ],
+    1,
+  ];
+  let number = arr[1];
+
+  for (i = 0; i < 3; i++) {
+    let flag = false;
+    for (j = 0; j < 1; j++) {
+      if (arr[0][i][j] === number) {
+        flag = true;
+      }
+    }
+    if (flag === false) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+}
+
+console.log(isOmnipresent());
