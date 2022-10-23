@@ -1,53 +1,53 @@
 //Ex1
 
-const firsYear = 1999;
-const secondYear = 1990;
+const firsYear = 1999
+const secondYear = 1990
 
-date = secondYear + (firsYear - secondYear) * 2;
+date = secondYear + (firsYear - secondYear) * 2
 
-console.log(date);
+console.log(date)
 
 //Ex2
 
-let zip = "56734";
+let zip = "56734"
 
 if (zip.length === 5) {
-  let allNumbers = true;
+  let allNumber = true
   for (i = 0; i < zip.length && allNumbers == true; i++) {
     if (zip[i] >= "0" && zip[i] <= "9") {
-      allNumbers = true;
+      allNumbers = true
     } else {
-      console.log("Error!");
+      console.log("Error!")
     }
   }
 }
 
-console.log(/^[0-9]+$/.test(zip));
+console.log(/^[0-9]+$/.test(zip))
 
 if (/^[0-9]+$/.test(zip)) {
-  console.log("Sucsess");
+  console.log("Sucsess")
 }
 
 //Ex3
 
-word = "aebhukldn";
+word = "aebhukldn"
 
 console.log(
   word.replace(/[aeiouy]/gi, function (char) {
     if (char == "a") {
-      return 1;
+      return 1
     }
     if (char == "e") {
-      return 2;
+      return 2
     }
     if (char == "i") {
-      return 3;
+      return 3
     }
     if (char == "o") {
-      return 4;
+      return 4
     }
     if (char == "u") {
-      return 5;
+      return 5
     }
   })
-);
+)
