@@ -21,3 +21,5 @@ for (i = 0; i < document.querySelectorAll("ul").length; i++) {
 }
 document.querySelector("ul").classList.add("university")
 document.querySelector("ul").classList.add("attendance")
+
+//Ex2
