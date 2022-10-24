@@ -14,9 +14,8 @@
 
 // ... ect
 
-let word
-
 function song(bottles) {
+  let word
   let counter = 0
   let endBottlesNumber = bottles
   for (let i = 0; i < bottles; i++) {
@@ -45,5 +44,5 @@ function song(bottles) {
     }
   }
 }
-
-song(50)
+let userNumber = prompt("Put a Number!")
+song(userNumber)
