@@ -17,8 +17,12 @@
 let bottles = 99
 let word
 
-for (i = 1; i < 14; i++) {
-  i == 1 ? (word = "it") : (word = "them")
+for (let i = 1; i < 14; i++) {
+  if (i == 1) {
+    word = "it"
+  } else {
+    word = "them"
+  }
   console.log(`${bottles} bottles of beer on the wall`)
   console.log(`${bottles} bottles of beer`)
   console.log(`Take ${i} down, pass ${word} around`)
