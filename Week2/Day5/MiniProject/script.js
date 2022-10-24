@@ -20,16 +20,19 @@ function playTheGame() {
 }
 
 function compareNumbers(userNumber, computerNumber) {
-  while (userNumber !== computerNumber) {
+  let i = 0
+  while (userNumber !== computerNumber && i < 2) {
     if (userNumber > computerNumber) {
       userNumber = prompt(
         "Your number is bigger then the computers, guess again"
       )
+      i++
       console.log(`New User Number: ${userNumber}`)
     } else if (userNumber < computerNumber) {
       userNumber = prompt(
         "You number is smaller then the computer, guess again"
       )
+      i++
       console.log(`New User Number: ${userNumber}`)
     }
     if (userNumber == computerNumber) {

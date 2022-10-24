@@ -15,3 +15,14 @@ document.getElementById("bold").onclick = function () {
     document.querySelectorAll("p")[i].style.fontWeight = "bold"
   }
 }
+
+document.querySelector("h1").onmouseover = function () {
+  let size = Math.round(Math.random() * 100)
+  document.querySelector("h1").style.fontSize = `${size}px`
+  document.querySelector("h1").style.opacity = "100%"
+  document.querySelector("h1").style.transition = "opacity 5s;"
+}
+
+document.querySelector("h2").onmouseover = function () {
+  document.querySelector("h2").style.opacity = "0"
+}

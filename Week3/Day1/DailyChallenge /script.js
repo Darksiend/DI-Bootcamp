@@ -20,7 +20,7 @@ let colorsArr = [
   "wheat",
   "yellow",
 ]
-parent = document.querySelector("section")
+let parent = document.querySelector("section")
 console.log(planetsList.length)
 for (i = 0; i < planetsList.length; i++) {
   let planet = document.createElement("div")
