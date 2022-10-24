@@ -24,6 +24,7 @@ function song(bottles) {
       counter++
     }
   }
+
   counter -= 1
   for (let i = 1; i < counter; i++) {
     if (i == 1) {
@@ -44,5 +45,6 @@ function song(bottles) {
     }
   }
 }
+
 let userNumber = prompt("Put a Number!")
 song(userNumber)
