@@ -14,24 +14,36 @@
 
 // ... ect
 
-let bottles = 99
 let word
 
-for (let i = 1; i < 14; i++) {
-  if (i == 1) {
-    word = "it"
-  } else {
-    word = "them"
+function song(bottles) {
+  let counter = 0
+  let endBottlesNumber = bottles
+  for (let i = 0; i < bottles; i++) {
+    if (endBottlesNumber > 0) {
+      endBottlesNumber -= i
+      counter++
+    }
   }
-  console.log(`${bottles} bottles of beer on the wall`)
-  console.log(`${bottles} bottles of beer`)
-  console.log(`Take ${i} down, pass ${word} around`)
-  bottles = bottles - i
-  console.log(`we have now ${bottles} bottles`)
-  if (i == 13) {
+  counter -= 1
+  for (let i = 1; i < counter; i++) {
+    if (i == 1) {
+      word = "it"
+    } else {
+      word = "them"
+    }
     console.log(`${bottles} bottles of beer on the wall`)
     console.log(`${bottles} bottles of beer`)
-    console.log(`Take 8 down, pass ${word} around`)
-    console.log(`0 bottle of beer on the wall`)
+    console.log(`Take ${i} down, pass ${word} around`)
+    bottles = bottles - i
+    console.log(`we have now ${bottles} bottles`)
+    if (i == counter - 1) {
+      console.log(`${bottles} bottles of beer on the wall`)
+      console.log(`${bottles} bottles of beer`)
+      console.log(`Take ${bottles} down, pass ${word} around`)
+      console.log(`0 bottle of beer on the wall`)
+    }
   }
 }
+
+song(50)
