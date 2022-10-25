@@ -28,4 +28,3 @@ for (i = 0; i < planetsList.length; i++) {
     }
   }
 }
-console.log(parent);
