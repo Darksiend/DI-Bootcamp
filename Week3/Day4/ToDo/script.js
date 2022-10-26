@@ -13,12 +13,17 @@ function addTask() {
   console.log();
   if (inputField.value != "") {
     let taskElement = document.createElement("div");
-
+    let taskObj = {
+      taskName: inputField.value,
+      done: false,
+      taskId: tasksArr.length + 1,
+    };
     let deleteTaskIcon = document.createElement("img");
+    let inputCheckbox = document.createElement("input");
 
     deleteTaskIcon.setAttribute("src", "assets/delete.svg");
+
     deleteTaskIcon.setAttribute("id", "delete-button");
-    let inputCheckbox = document.createElement("input");
 
     inputCheckbox.setAttribute("type", "checkbox");
 
@@ -27,8 +32,9 @@ function addTask() {
     taskElement.textContent = inputField.value;
 
     taskElement.setAttribute("class", "task-item");
+    taskElement.setAttribute("data-task-id", taskObj.taskId);
 
-    tasksArr.push(taskElement.textContent);
+    tasksArr.push(taskObj);
 
     taskElement.prepend(inputCheckbox);
 
@@ -39,6 +45,8 @@ function addTask() {
     taskElement.style.alignItems = "center";
 
     tasksList.append(taskElement);
+
+    taskObj = { taskName: "1", done: false, taskId: 0 };
 
     inputField.value = "";
 
