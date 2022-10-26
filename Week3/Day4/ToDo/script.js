@@ -48,25 +48,36 @@ function addTask() {
 
     tasksList.append(taskElement);
 
-    taskObj = { taskName: "1", done: false, taskId: 0 };
-
     inputField.value = "";
-
-    console.log(tasksArr);
   } else return;
 }
 
 document.addEventListener("change", doTask);
 
 function doTask(event) {
-  console.log(event.target.checked);
   if (event.target.checked == false) {
+    console.log("Checked");
+
     event.path[1].style.textDecoration = "none";
+
+    for (i = 0; i < tasksArr.length; i++) {
+      if (tasksArr[i].taskId == event.path[1].getAttribute("data-task-id")) {
+        tasksArr[i].done = false;
+      }
+    }
   } else {
-    console.log("UnChecked");
-    console.log(event.path[1]);
     event.path[1].style.textDecoration = "line-through";
+    console.log(
+      `Change element id: ${event.path[1].getAttribute("data-task-id")}`
+    );
+
+    for (i = 0; i < tasksArr.length; i++) {
+      if (tasksArr[i].taskId == event.path[1].getAttribute("data-task-id")) {
+        tasksArr[i].done = true;
+      }
+    }
   }
+  console.log(tasksArr);
 }
 
 function deleteTask(event) {
