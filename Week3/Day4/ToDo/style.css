@@ -23,6 +23,8 @@ form {
   height: 50px;
   border: none;
   border: 1px solid orange;
+  font-size: 20px;
+  padding-left: 15px;
 }
 
 #submit {

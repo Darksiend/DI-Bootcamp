@@ -18,12 +18,14 @@ function addTask() {
       done: false,
       taskId: tasksArr.length + 1,
     };
-    let deleteTaskIcon = document.createElement("img");
-    let inputCheckbox = document.createElement("input");
 
+    let inputCheckbox = document.createElement("input");
+    let deleteTaskIcon = document.createElement("img");
     deleteTaskIcon.setAttribute("src", "assets/delete.svg");
 
     deleteTaskIcon.setAttribute("id", "delete-button");
+
+    deleteTaskIcon.addEventListener("click", deleteTask);
 
     inputCheckbox.setAttribute("type", "checkbox");
 
@@ -67,4 +69,20 @@ function doTask(event) {
   }
 }
 
-function deleteTask() {}
+function deleteTask(event) {
+  for (task of tasksArr) {
+    if (event.path[1].getAttribute("data-task-id") == task.taskId) {
+      tasksArr.splice(tasksArr.indexOf(task), 1);
+      console.log("Deleted from", tasksArr);
+    }
+  }
+  console.log();
+  event.path[1].remove();
+}
+
+inputField.addEventListener("input", function () {
+  if (inputField.value[0] != inputField.value[0].toUpperCase()) {
+    (inputField.value = inputField.value.slice(0, 1).toUpperCase()) +
+      inputField.value.slice(1, inputField.value.length);
+  }
+});
