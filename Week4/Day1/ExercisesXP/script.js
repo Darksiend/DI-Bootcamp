@@ -136,3 +136,16 @@ function colorLogger(colors2, ordinal) {
 colorLogger(colors, ordinal);
 
 //Ex6
+
+let bankAmount = 10000;
+const vat = 0.17;
+const details = ["+200", "-100", "+146", "+167", "-2900"];
+let vatMult = (details) => {
+  details.forEach((item, index) => {
+    bankAmount = bankAmount + Number(item) * (1 + vat);
+  });
+};
+
+for (let i = 0; i < details.length; i++) console.log(Number(details[i]));
+vatMult(details);
+console.log(bankAmount);
