@@ -12,7 +12,6 @@ function addPara() {
 
 function runXTimes(x, interval, myFunction) {
   step = 0;
-
   function stepPlus() {
     if (step < x) {
       return (step += 1), myFunction();
