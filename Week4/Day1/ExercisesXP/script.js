@@ -90,3 +90,28 @@ console.log(experiencePoints);
 
 //Ex3
 
+let isString = (input) => {
+  if (typeof input === "string") {
+    return true;
+  } else {
+    return false;
+  }
+};
+console.log(isString("hello"));
+//true
+console.log(isString([1, 2, 4, 0]));
+//false
+
+//Ex4
+const colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
+function colorsChecker(colors) {
+  const isViolet = (element) =>
+    element === "Violet" ? console.log("Yeah") : console.log("No...");
+  colors.forEach(function (item, i, arr) {
+    console.log(`${i}# choice is ${item}.`);
+    console.log(isViolet(item));
+  });
+}
+colorsChecker(colors);
+
+//Ex5
