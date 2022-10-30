@@ -99,23 +99,31 @@ console.log(isString([1, 2, 4, 0]));
 //false
 
 //Ex4
-// const colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
-// function colorsChecker(colors) {
-//   const isViolet = (element) =>
-//     element === "Violet" ? console.log("Yeah") : console.log("No...");
-//   colors.forEach(function (item, i, arr) {
-//     console.log(`${i}# choice is ${item}.`);
-//     console.log(isViolet(item));
-//   });
-// }
-// colorsChecker(colors);
+const colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
+function colorsChecker(colors) {
+  const isViolet = (element) =>
+    element === "Violet" ? console.log("Yeah") : console.log("No...");
+  colors.forEach(function (item, i, arr) {
+    console.log(`${i}# choice is ${item}.`);
+    console.log(isViolet(item));
+  });
+}
+colorsChecker(colors);
 
 //Ex5
 
-const colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
+const colors2 = [
+  "Blue",
+  "Green",
+  "Red",
+  "Orange",
+  "Violet",
+  "Indigo",
+  "Yellow",
+];
 const ordinal = ["th", "st", "nd", "rd"];
 
-function colorLogger(colors, ordinal) {
+function colorLogger(colors2, ordinal) {
   colors.forEach((color, index) => {
     console.log(
       `${index + 1}${
@@ -126,3 +134,5 @@ function colorLogger(colors, ordinal) {
 }
 
 colorLogger(colors, ordinal);
+
+//Ex6
