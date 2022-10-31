@@ -26,12 +26,12 @@ const gameInfo = [
 ];
 let usernames = [];
 let moreThan = [];
-gameInfo.forEach(function (obj) {
+gameInfo.forEach((obj) => {
   usernames.push(obj.username + "!");
 });
 
-gameInfo.forEach(function (obj) {
-  if (obj.score > 5) moreThan.push(obj.username + "!");
+gameInfo.forEach((obj) => {
+  if (obj.score > 5) moreThan.push(obj.username);
 });
 
 console.log(usernames);
