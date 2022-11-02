@@ -9,7 +9,7 @@ const students = [
   { name: "Jamie", course: "Big Data", isPassed: false },
 ];
 
-const passed = students
+students
   .filter((student) => student.isPassed === true)
   .forEach((el) =>
     console.log(
