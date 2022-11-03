@@ -73,4 +73,26 @@ const robots = [
   },
 ];
 
-function createCard(imgUrl, name, email) {}
+function createCard(imgUrl, name, email) {
+  let parent = document.getElementById("cards-container");
+  let cardDiv = document.createElement("div");
+  cardDiv.setAttribute("class", "card");
+  let img = document.createElement("img");
+  img.setAttribute("src", imgUrl);
+  let robotName = document.createElement("div");
+  robotName.setAttribute("class", `name`);
+  robotName.textContent = name;
+  let robotEmail = document.createElement("div");
+  robotEmail.setAttribute("class", "email");
+  robotEmail.textContent = email;
+  cardDiv.append(img, robotName, robotEmail);
+  parent.append(cardDiv);
+}
+
+function createAllCards() {
+  robots.forEach((robot) => {
+    createCard(robot.image, robot.name, robot.email);
+  });
+}
+
+createAllCards();
