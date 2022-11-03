@@ -1,6 +1,6 @@
 //RoboFriendSearch
 
-const robots = [
+let robots = [
   {
     id: 1,
     name: "Leanne Graham",
@@ -72,6 +72,28 @@ const robots = [
     image: "https://robohash.org/10?200x200",
   },
 ];
+
+document.getElementById("input-field").addEventListener("input", () => {
+  searchRobot();
+});
+
+function searchRobot() {
+  let cards = document.querySelectorAll(".card");
+
+  cards.forEach((card) => {
+    if (
+      !card
+        .querySelector(".name")
+        .textContent.toLowerCase()
+        .includes(document.getElementById("input-field").value.toLowerCase()) &&
+      document.getElementById("input-field").value !== ""
+    ) {
+      card.classList.add("invisible");
+    } else {
+      card.classList.remove("invisible");
+    }
+  });
+}
 
 function createCard(imgUrl, name, email) {
   let parent = document.getElementById("cards-container");
