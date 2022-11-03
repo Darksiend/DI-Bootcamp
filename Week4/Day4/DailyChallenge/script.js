@@ -1,9 +1,6 @@
 //Daily Challenge
 
 class Video {
-  title;
-  uploader;
-  time;
   constructor(title, uploader, time) {
     this.title = title;
     this.uploader = uploader;
