@@ -8,5 +8,6 @@ document.getElementById("form").addEventListener("submit", () => {
 
   console.log(this.event.target[0].value);
   console.log(this.event.target[1].id);
-  console.log(obj);
+  console.log(JSON.parse(JSON.stringify(obj)));
+  document.getElementById("div").append(JSON.stringify(obj));
 });
