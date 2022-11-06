@@ -1,4 +1,4 @@
-//Ex1
+//Ex1/2
 
 let xhr = new XMLHttpRequest();
 
@@ -11,5 +11,3 @@ xhr.send();
 xhr.onload = () => {
   console.log(JSON.parse(xhr.response).data);
 };
-
-//Ex2
