@@ -1,22 +1,49 @@
 //StarwarsMiniProject
-function loadCharacter() {
+function loadCharacter(qualifiedName, value) {
+  document.getElementById("character-info-container").style.display = "none";
+  document.getElementById("donut").style.display = "inline-block";
   console.log("click!");
   xhr = new XMLHttpRequest();
   xhr.open("GET", `https://www.swapi.tech/api/people/1`);
   xhr.send();
   console.log(xhr);
+
   xhr.onload = () => {
-    console.log(JSON.parse(xhr.response));
-    let data = JSON.parse(xhr.response);
+    console.log(JSON.parse(xhr.response).result.properties);
+    let character = JSON.parse(xhr.response).result.properties;
+    console.log("loaded");
+    displayCharacter(character);
+    document.getElementById("donut").style.display = "none";
+    document.getElementById("character-info-container").style.display = "flex";
   };
 
-  xhr.onprogress = function (event) {
-    if (event.lengthComputable) {
-      console.log(`Received ${event.loaded} of ${event.total} bytes`);
-    } else {
-      console.log(`Received ${event.loaded} bytes`); // no Content-Length
-    }
+  xhr.onerror = function () {
+    console.log("Error something wrong###");
   };
+}
+
+function displayCharacter(character) {
+  document.getElementById("name").textContent = "Name: " + character.name;
+  document.getElementById("height").textContent = "Height: " + character.height;
+  document.getElementById("gender").textContent = "Gender: " + character.gender;
+  document.getElementById("birth").textContent =
+    "Birth: " + character.birth_year;
+  getHomeworld(character.homeworld);
+}
+
+function getHomeworld(url) {
+  xhr = new XMLHttpRequest();
+  xhr.open("GET", url);
+  xhr.send();
+  console.log(xhr);
+  xhr.onload = () => {
+    console.log(JSON.parse(xhr.response));
+    let homeworldName = JSON.parse(xhr.response).result.properties.name;
+    console.log(homeworldName);
+    document.getElementById("home-world").textContent =
+      "Home World: " + homeworldName;
+  };
+
   xhr.onerror = function () {
     console.log("Error something wrong###");
   };
