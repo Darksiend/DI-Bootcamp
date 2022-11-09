@@ -27,7 +27,12 @@ function sortWords(arr) {
   });
 }
 
-makeAllCaps(arr).then((arr)=>sortWords(arr).then((arr)=>console.log(arr)));
+makeAllCaps(arr)
+    .then((arr)=>sortWords(arr)
+        .then((arr)=>console.log(arr)))
+        .catch(e =>console.log(e))
+    .catch(e =>console.log(e))
+
 
 //DC 2
 let morse = `{
