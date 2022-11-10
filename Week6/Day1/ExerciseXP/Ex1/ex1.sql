@@ -22,4 +22,9 @@ VALUES
     (2,'Sandra','Jones'),
     (3,'Scott','Scott'),
     (4,'Trevor','Green'),
-    (5,'Melanie','Johnson')
+    (5,'Melanie','Johnson');
+
+
+SELECT * FROM items 
+
+SELECT * FROM items WHERE item_price > 80
