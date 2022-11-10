@@ -1,7 +1,7 @@
 CREATE TABLE students (
     id SERIAL PRIMARY KEY,
-    last_name TEXT NOT NULL,
     first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL,
     birth_date DATE NOT NULL
 );
 
@@ -14,3 +14,13 @@ VALUES
     (DEFAULT, 'David', 'Grez', '06/14/2003'),
     (DEFAULT, 'Marc', 'Simpson', '03/10/1980');
     
+
+SELECT * FROM students
+
+SELECT last_name,first_name  FROM students
+
+SELECT last_name,first_name  FROM students WHERE id = 2
+
+SELECT *  FROM students WHERE last_name = 'Benichou' AND first_name = 'Marc'
+
+SELECT *  FROM students WHERE last_name = 'Benichou' OR first_name = 'Marc'
