@@ -1,3 +1,5 @@
 CREATE TABLE items(
-    item_name varchar(128) NOT NULL
+    item_id INTEGER PRIMARY KEY,
+    item_name TEXT NOT NULL,
+    item_price INTEGER
 )
