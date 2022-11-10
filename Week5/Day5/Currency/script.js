@@ -1,7 +1,7 @@
 //Curren
 
-api_key = "59f8eb01ea592b04298bd2af";
-url = "https://v6.exchangerate-api.com/v6/59f8eb01ea592b04298bd2af/codes";
+let api_key = "59f8eb01ea592b04298bd2af";
+let url = "https://v6.exchangerate-api.com/v6/59f8eb01ea592b04298bd2af/codes";
 async function getAllCodesJSON() {
   const response = await fetch(url);
   const codes = await response.json();
