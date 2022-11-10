@@ -25,6 +25,15 @@ VALUES
     (5,'Melanie','Johnson');
 
 
+
 SELECT * FROM items 
 
 SELECT * FROM items WHERE item_price > 80
+
+SELECT * FROM items WHERE item_price <= 300
+
+SELECT * FROM customers WHERE  costumer_last_name = 'Smith'
+
+SELECT * FROM customers WHERE  costumer_last_name = 'Jones'
+
+SELECT * FROM customers WHERE  costumer_last_name != 'Jones'
