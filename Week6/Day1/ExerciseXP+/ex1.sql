@@ -26,4 +26,8 @@ SELECT *  FROM students WHERE last_name = 'Benichou' AND first_name = 'Marc'
 SELECT *  FROM students WHERE last_name = 'Benichou' OR first_name = 'Marc'
 -- Fetch the students whose first_names contain the letter a.
 SELECT * FROM students WHERE  first_name LIKE '%a%'
+-- Fetch the students whose first_names start with the letter a.
+SELECT * FROM students WHERE first_name LIKE 'A%'
+-- Fetch the students whose first_names end with the letter a.
+SELECT * FROM students WHERE first_name LIKE '%a'
 
