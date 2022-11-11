@@ -24,3 +24,6 @@ SELECT last_name,first_name  FROM students WHERE id = 2
 SELECT *  FROM students WHERE last_name = 'Benichou' AND first_name = 'Marc'
 
 SELECT *  FROM students WHERE last_name = 'Benichou' OR first_name = 'Marc'
+
+SELECT * FROM students WHERE  first_name LIKE '%a%'
+
