@@ -17,3 +17,8 @@ VALUES
 
 SELECT  first_name, last_name, birth_date FROM students
 -- Fetch the first four students. You have to order the four students alphabetically by last_name.
+SELECT  first_name, last_name, birth_date FROM students ORDER BY last_name FETCH FIRST 4 ROW ONLY
+-- Fetch the details of the youngest student.
+SELECT * from students WHERE birth_date = (SELECT max(birth_date) FROM students)
+-- Fetch three students skipping the first two students.
+SELECT  * FROM students OFFSET 2 FETCH FIRST 3 ROW ONLY
