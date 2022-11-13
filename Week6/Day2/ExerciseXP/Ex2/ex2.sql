@@ -40,3 +40,15 @@ FROM film
 WHERE film_id = 15
     or film_id = 150;
 
+-- Write a query which should check if your favorite movie exists in the database. Have your query get the film ID, title, description, length and the rental rate, these details can be found in the “film” table.
+--TODO
+
+SELECT * -- Write a query which will find the 10 cheapest movies.
+FROM film
+ORDER BY rental_rate ASC FETCH FIRST 10 ROW ONLY;
+
+
+SELECT * --Not satisfied with the results. Write a query which will find the next 10 cheapest movies.
+FROM film
+ORDER BY rental_rate ASC
+OFFSET 10 FETCH FIRST 10 ROW ONLY;
