@@ -52,3 +52,38 @@ SELECT * --Not satisfied with the results. Write a query which will find the nex
 FROM film
 ORDER BY rental_rate ASC
 OFFSET 10 FETCH FIRST 10 ROW ONLY;
+
+-- Write a query which will join the data in the customer table and the payment table. You want to get the amount and the date of every payment made by a customer, ordered by their id
+
+SELECT CUSTOMER.first_name,
+       PAYMENT.amount,
+       PAYMENT.payment_date
+FROM CUSTOMER as customer,
+     PAYMENT as payment
+ORDER BY CUSTOMER.customer_id;
+
+-- You need to check your inventory. Write a query to get all the movies which are not in inventory.
+
+SELECT FILM.title
+FROM film FILM
+LEFT OUTER JOIN inventory INVENTORY ON FILM.film_id = INVENTORY.film_id
+where INVENTORY.inventory_id IS NULL;
+
+-- Write a query to find which city is in which country.
+
+SELECT city,
+       country_id
+FROM city;
+
+
+SELECT *
+FROM country;
+
+
+SELECT CITY.country_id,
+       CITY.city,
+       COUNTRY.country_id,
+       COUNTRY.country
+FROM CITY city,
+     COUNTRY country
+WHERE CITY.country_id = COUNTRY.country_id
