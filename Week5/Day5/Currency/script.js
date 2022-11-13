@@ -37,5 +37,5 @@ function getConversionRate() {
 
 function convertAmount(rate) {
   let amount = document.getElementById("first-cur").value;
-  document.getElementById("convert-res-container").textContent = amount * rate;
+  document.getElementById("second-cur").value = amount * rate;
 }
