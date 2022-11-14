@@ -21,32 +21,11 @@ WHERE return_date IS NULL;
 
 -- Find the 30 most expensive movies which are outstanding (ie. have not been returned to the store yet)
 
-SELECT *
+SELECT DISTINCT film.title,
+                film.rental_rate
 FROM rental
-WHERE return_date IS NULL;
-
-
-SELECT *
-FROM payment;
-
-
-SELECT *
-from film;
-
-
-SELECT rental.rental_id,
-       payment_id,
-       amount
-FROM rental
-INNER JOIN payment ON rental.rental_id = payment.rental_id
+INNER JOIN inventory ON rental.inventory_id = inventory.inventory_id
+INNER  JOIN film ON inventory.film_id = film.film_id
 WHERE return_date IS NULL
-ORDER BY amount DESC;
-
-
-SELECT rental.rental_id,
-       payment_id,
-       amount
-FROM rental
-INNER JOIN film ON rental.rental_id = payment.rental_id
-WHERE return_date IS NULL
-ORDER BY amount DESC;
+ORDER BY rental_rate DESC
+LIMIT 30;
