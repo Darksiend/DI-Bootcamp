@@ -20,3 +20,50 @@ WHERE language.language_id NOT IN
         (SELECT language_id
          FROM film);
 
+-- Create a new table called new_film with the following columns : id, name. Add some new films to the table.
+
+CREATE TABLE new_film (id SERIAL PRIMARY KEY,
+                                         name VARCHAR NOT NULL);
+
+
+INSERT INTO new_film
+VALUES (DEFAULT,
+        'First film'), (DEFAULT,
+                        'Second Film');
+
+
+CREATE TABLE customer_review
+    (review_id SERIAL PRIMARY KEY,
+                              film_id SERIAL REFERENCES new_film(id) ON DELETE CASCADE,
+                                                                               language_id INTEGER REFERENCES language(language_id),
+                                                                                                              title TEXT NOT NULL,
+                                                                                                                         score INTEGER,review_text TEXT,last_update DATE);
+
+
+INSERT INTO customer_review
+VALUES (DEFAULT,
+        1,
+        1,
+        'My review',
+        10,
+        'Bla bla blaaaaa'),(DEFAULT,
+                            2,
+                            1,
+                            'My Second review',
+                            10,
+                            'Bla bla blaaaaa Blaaaa')
+SELECT *
+FROM language;
+
+
+SELECT *
+from customer_review;
+
+
+SELECT *
+from new_film;
+
+
+DELETE
+FROM new_film
+WHERE id = 2
