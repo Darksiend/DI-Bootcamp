@@ -10,3 +10,13 @@ SELECT title AS film_title,
        name AS film_language
 FROM film
 INNER JOIN language ON film.language_id = language.language_id;
+
+-- Get all languages, even if there are no films in those languages.
+
+SELECT name
+FROM language
+LEFT JOIN film ON language.language_id = film.language_id
+WHERE language.language_id NOT IN
+        (SELECT language_id
+         FROM film);
+
