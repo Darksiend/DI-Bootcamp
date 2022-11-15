@@ -112,4 +112,16 @@ WHERE (hire_date >= '1987-01-01'
 SELECT *
 FROM employees
 WHERE (first_name LIKE '%c%')
-        and (first_name LIKE '%e%')
+        and (first_name LIKE '%e%');
+
+--4.Write a query to display the last_name, job, and salary of all the employees who don’t work as Programmers or Shipping Clerks, and who don’t receive a salary equal to $4,500, $10,000, or $15,000.
+
+SELECT last_name,
+       job_title,
+       department_name,
+       salary
+FROM employees
+INNER JOIN departments ON employees.department_id = departments.department_id
+INNER JOIN jobs ON employees.job_id = jobs.job_id
+WHERE departments.department_name != 'IT'
+        AND departments.department_name != 'Shipping'
