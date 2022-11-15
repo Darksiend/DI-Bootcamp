@@ -49,3 +49,54 @@ FROM customer
 LEFT JOIN customer_profile ON customer_profile.customer_id = customer.id;
 
 -- The number of customers that are not LoggedIn
+
+SELECT first_name,
+       isloggedin
+FROM customer
+RIGHT JOIN customer_profile ON customer_profile.customer_id = customer.id
+WHERE customer_profile.isloggedin = false;
+
+--PART2
+
+CREATE TABLE Book(book_id SERIAL PRIMARY KEY,
+                                         title VARCHAR NOT NULL,
+                                                       author VARCHAR NOT NULL);
+
+
+SELECT *
+FROM Book;
+
+
+INSERT INTO Book
+VALUES (DEFAULT,
+        'Alice In Wonderland',
+        'Lewis Carroll'),(DEFAULT,
+                          'Harry Potter',
+                          'J.K Rowling'),(DEFAULT,
+                                          'To kill a mockingbird',
+                                          'Harper Lee');
+
+
+SELECT *
+FROM Book;
+
+
+CREATE TABLE Student(student_id SERIAL PRIMARY KEY,
+                                               name VARCHAR NOT NULL UNIQUE,
+                                                                     age INTEGER, CHECK (age<=15));
+
+
+INSERT INTO Student
+VALUES (DEFAULT,
+        'John',
+        12),(DEFAULT,
+             'Lera',
+             11),(DEFAULT,
+                  'Patrick',
+                  10),(DEFAULT,
+                       'Bob',
+                       14);
+
+
+SELECT *
+FROM Student
