@@ -42,3 +42,14 @@ SELECT MAX(salary) AS max_salary,
        MIN(salary) AS min_salary
 FROM employees;
 
+-- Write a query to get the average salary paid to the employees.
+
+SELECT AVG(salary) AS avg_salary
+FROM employees;
+
+--Write a query to get the number of employees working in the company.
+
+SELECT COUNT(*)
+FROM employees;
+
+--Write a query to get all the first names from the employees table in upper case.
