@@ -61,3 +61,11 @@ FROM employees;
 
 SELECT LEFT(first_name,3)
 FROM employees;
+
+--Write a query to get the full names of all the employees in the employees table. You have to include the first name and last name.
+
+SELECT (first_name,
+        last_name) AS fullname
+FROM employees;
+
+--Write a query to get the first name, last name and the length of the full name of all the employees from the employees table.
