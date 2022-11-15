@@ -38,7 +38,14 @@ FROM customer_profile;
 SELECT first_name,
        isloggedin
 FROM customer_profile
-INNEr JOIN customer ON customer_profile.customer_id = customer.id
+INNER JOIN customer ON customer_profile.customer_id = customer.id
 WHERE isloggedin = true;
 
 -- All the customers first_name and isLoggedIn columns - even the customers those who don’t have a profile.
+
+SELECT first_name,
+       isloggedin
+FROM customer
+LEFT JOIN customer_profile ON customer_profile.customer_id = customer.id;
+
+-- The number of customers that are not LoggedIn
