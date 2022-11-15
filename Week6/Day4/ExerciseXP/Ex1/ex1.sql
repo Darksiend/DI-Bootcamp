@@ -19,5 +19,6 @@ ORDER BY first_name DESC;
 
 SELECT (first_name,
         last_name) AS fullname,
-       salary
-FROM employees
+       salary,
+       salary * 0.15 as PF
+FROM employees;
