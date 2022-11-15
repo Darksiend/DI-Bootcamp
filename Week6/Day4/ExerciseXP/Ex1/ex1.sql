@@ -53,3 +53,11 @@ SELECT COUNT(*)
 FROM employees;
 
 --Write a query to get all the first names from the employees table in upper case.
+
+SELECT UPPER(first_name)
+FROM employees;
+
+--Write a query to get the first three characters of each first name of all the employees in the employees table.
+
+SELECT LEFT(first_name,3)
+FROM employees;
