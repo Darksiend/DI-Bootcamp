@@ -69,3 +69,21 @@ SELECT (first_name,
 FROM employees;
 
 --Write a query to get the first name, last name and the length of the full name of all the employees from the employees table.
+
+SELECT first_name ||' '|| last_name,
+       LENGTH(first_name ||' '|| last_name) as fullname_length
+FROM employees;
+
+--Write a query to check whether the first_name column of the employees table contains any numbers.
+
+SELECT (CASE
+            WHEN first_name LIKE '%[^0-9.]%' THEN 'contains numbers'
+            ELSE first_name
+        END)
+FROM employees;
+
+--Write a query to select the first ten records from a table.
+
+SELECT *
+FROM employees
+LIMIT 10;
