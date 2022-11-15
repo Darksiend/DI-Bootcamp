@@ -127,3 +127,19 @@ WHERE departments.department_name != 'IT'
         AND departments.department_name != 'Shipping';
 
 --5.Write a query to display the last names of all employees whose last name contains exactly six characters.
+
+SELECT first_name
+FROM employees
+WHERE LENGTH(first_name) = 6;
+
+--6 Write a query to display the last name of all employees who have the letter ‘e’ as the third character in the name.
+
+SELECT last_name
+FROM employees
+WHERE first_name LIKE '__e%';
+
+--7.Write a query to display the jobs title appearing in the employees table
+
+SELECT job_title
+FROM employees
+INNER JOIN jobs ON employees.job_id = jobs.job_id
