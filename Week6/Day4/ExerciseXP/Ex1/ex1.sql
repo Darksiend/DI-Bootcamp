@@ -87,3 +87,29 @@ FROM employees;
 SELECT *
 FROM employees
 LIMIT 10;
+
+-- Restricting And Sorting
+ --1. Write a query to display the first_name, last_name and salary of all employees whose salary is between $10,000 and $15,000.
+
+SELECT first_name,
+       last_name,
+       salary
+FROM employees
+WHERE (salary > 10000
+       and salary< 15000);
+
+--2.Write a query to display the first_name, last_name and hire date of all employees who were hired in 1987.
+
+SELECT first_name,
+       last_name,
+       hire_date
+FROM employees
+WHERE (hire_date >= '1987-01-01'
+       and hire_date<= '1987-12-12');
+
+--3. Write a query to get the all employees whose first_name has both the letters ‘c’ and ‘e’.
+
+SELECT *
+FROM employees
+WHERE (first_name LIKE '%c%')
+        and (first_name LIKE '%e%')
