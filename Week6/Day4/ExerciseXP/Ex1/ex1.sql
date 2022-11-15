@@ -124,4 +124,6 @@ FROM employees
 INNER JOIN departments ON employees.department_id = departments.department_id
 INNER JOIN jobs ON employees.job_id = jobs.job_id
 WHERE departments.department_name != 'IT'
-        AND departments.department_name != 'Shipping'
+        AND departments.department_name != 'Shipping';
+
+--5.Write a query to display the last names of all employees whose last name contains exactly six characters.
