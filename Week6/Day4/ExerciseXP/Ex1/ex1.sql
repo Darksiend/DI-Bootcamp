@@ -22,3 +22,18 @@ SELECT (first_name,
        salary,
        salary * 0.15 as PF
 FROM employees;
+
+-- Write a query to get the employee IDs, names (first_name, last_name) and salary in ascending order according to their salary.
+
+SELECT (first_name,
+        last_name) AS fullname,
+       salary
+FROM employees
+ORDER BY salary;
+
+-- Write a query to get the total sum of all salaries paid to the employees.
+
+SELECT SUM(salary)
+FROM employees;
+
+-- Write a query to get the maximum and minimum salaries paid to the employees.
