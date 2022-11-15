@@ -100,3 +100,36 @@ VALUES (DEFAULT,
 
 SELECT *
 FROM Student
+CREATE TABLE Library
+    (book_fk_id INT,
+     FOREIGN KEY (book_fk_id) REFERENCES Book (book_id)ON DELETE CASCADE ON UPDATE CASCADE,
+                                                                                   student_fk_id INT,
+     FOREIGN KEY (student_fk_id) REFERENCES Student (student_id)ON DELETE CASCADE ON UPDATE CASCADE,
+                                                                                            borrowed_date DATE,PRIMARY KEY(book_fk_id,student_fk_id));
+
+
+INSERT INTO Library
+VALUES(1,
+       1,
+       '2022/02/15'),(3,
+                      4,
+                      '2021/03/03'),(1,
+                                     2,
+                                     '2021/05/23'),(2,
+                                                    4,
+                                                    '2021/08/12');
+
+
+SELECT *
+FROM STUDENT;
+
+
+SELECT *
+FROM Book;
+
+
+SELECT *
+FROM library;
+
+
+DROP TABLE library
