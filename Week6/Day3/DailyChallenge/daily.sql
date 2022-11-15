@@ -132,4 +132,16 @@ SELECT *
 FROM library;
 
 
-DROP TABLE library
+SELECT name,
+       title
+FROM student
+INNER JOIN Library ON (student.student_id = student_fk_id)
+INNER JOIN Book ON (book_fk_id = book.book_id);
+
+-- Select the average age of the children, that borrowed the book Alice in Wonderland
+
+SELECT AVG(age)
+FROM student
+INNER JOIN Library ON (student.student_id = student_fk_id)
+INNER JOIN Book ON (book_fk_id = book.book_id)
+WHERE book_id = 1;
