@@ -142,4 +142,14 @@ WHERE first_name LIKE '__e%';
 
 SELECT job_title
 FROM employees
-INNER JOIN jobs ON employees.job_id = jobs.job_id
+INNER JOIN jobs ON employees.job_id = jobs.job_id;
+
+--8. Write a query to select all information of employees whose last name is either ‘JONES’ or ‘BLAKE’ or ‘SCOTT’ or ‘KING’ or ‘FORD’.
+
+SELECT *
+FROM employees
+WHERE UPPER(last_name) IN ('JONES',
+                           'BLAKE',
+                           'SCOTT',
+                           'KING',
+                           'FORD')
