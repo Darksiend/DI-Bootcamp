@@ -281,6 +281,7 @@ Answer: I can add both
     ```
 
 21. How would you change the code above, so that when you modify the key `color` from the parameter `myshirt`, it won't change the global variable `tshirt` ?
+    Answer: I can create a copy of this object inside the function like: let copyObj = myshirt
 
 22. Use object destructuring to retrieve the value of the keys `france` and `spain`
 
@@ -350,7 +351,7 @@ Answer: I can add both
           });
         ```
 
-    Answer: SUCCESS! with State Pending
+    Answer: SUCCESS! with State Resolve
 
 26. What will be displayed by the following code, after 2 seconds?
 
