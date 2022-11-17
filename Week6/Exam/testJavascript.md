@@ -207,7 +207,7 @@ Answer: I can add both
     });
     ```
 
-    values: false
+    value: false
 
 16. What does the following code log?
 
