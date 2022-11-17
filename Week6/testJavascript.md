@@ -245,6 +245,10 @@ Answer: I can add both
     const secondInput = [1, -4, 12, 0, -3, 29, -150];
     //code
     console.log(total); //42
+    let total = 0;
+    secondInput.forEach((el) => {
+      if (el > 0) total += el;
+    });
     ```
 
 19. Use **3 javascript methods** and chain them to abbreviate the name and return the name initials.
