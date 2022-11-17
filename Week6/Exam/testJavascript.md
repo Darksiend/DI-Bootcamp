@@ -340,29 +340,33 @@ Answer: I can add both
 
 25. What will be the output and why ? What will be the state of the promise ?
 
-    ```javascript
-    Promise.resolve("Success!")
-      .then((data) => {
-        return data.toUpperCase();
-      })
-      .then((data) => {
-        console.log(data);
-      });
-    ```
+        ```javascript
+        Promise.resolve("Success!")
+          .then((data) => {
+            return data.toUpperCase();
+          })
+          .then((data) => {
+            console.log(data);
+          });
+        ```
+
+    Answer: SUCCESS! with State Pending
 
 26. What will be displayed by the following code, after 2 seconds?
 
-    ```javascript
-    const p = new Promise(function (resolve, reject) {
-      setTimeout(function () {
-        resolve("OK");
-      }, 2000);
-    });
+        ```javascript
+        const p = new Promise(function (resolve, reject) {
+          setTimeout(function () {
+            resolve("OK");
+          }, 2000);
+        });
 
-    p.then().then(function (data) {
-      console.log(data);
-    });
-    ```
+        p.then().then(function (data) {
+          console.log(data);
+        });
+        ```
+
+    Answer: 'OK'
 
 27. Consider the following `async` function and its output. What will be displayed to the console when calling the `test()` function? Explain the process
 
@@ -380,6 +384,8 @@ Answer: I can add both
 
     test();
     ```
+
+    Answer: it will be "Done", in the start of this function result will be 'first', and when function invoke promise javascript will wait to resolving or rejecting of the promise , after that result will be a resolve value of the promise and will console log it.
 
 28. Use **async await**, and fetch a fact on cats and display it. Use this third party API : `https://catfact.ninja/fact`
     1. In the HTML file, create a button, everytime you click it you will add a random cat fact on the DOM
