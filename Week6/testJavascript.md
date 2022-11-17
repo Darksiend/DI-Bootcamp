@@ -207,6 +207,8 @@ Answer: I can add both
     });
     ```
 
+    values: false
+
 16. What does the following code log?
 
     ```javascript
@@ -219,12 +221,22 @@ Answer: I can add both
     console.log(bignums);
     ```
 
+    answer: 50,87
+
 17. Use a **javascript array method** to square the value of every element in the array.
 
-    ```javascript
-    const input = [1, 2, 3, 4, 5];
-    //code
-    console.log(input); // [ 1, 4, 9, 16, 25]
+        ```javascript
+        const input = [1, 2, 3, 4, 5];
+        //code
+        let res = [];
+        input.forEach((el) => {
+        res.push(el * el);
+
+    });
+    console.log(res); // [ 1, 4, 9, 16, 25]
+
+    ```
+
     ```
 
 18. Use **2 javascript array methods** and chain them to return the sum of all the positives ones.
