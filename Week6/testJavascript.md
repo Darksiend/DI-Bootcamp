@@ -300,7 +300,7 @@ Answer: I can add both
 23. Use object destructuring in the function to retrieve the value of the keys `france` and `spain`
 
     ```javascript
-     function retrieveSports (//here) {
+     function retrieveSports ({ clubs: { france: franceTeam, spain: spainTeam }) {
         const sentence = `My favorite football teams are ${franceTeam} and ${spainTeam}`;
         console.log(sentence);
      }
