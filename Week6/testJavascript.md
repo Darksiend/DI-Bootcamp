@@ -162,6 +162,13 @@ Answer: I can add both
     1. Part I : Create a button in your HTML page, when the user will click the the button a paragraph will be added on the DOM with the content "New Paragraph". Use arrow functions.
 
     2. Part II : Add to each new paragraph, an event listener of mouse over. When you hover on a paragraph, the paragraph should become red (ie. color of the text).
+       Answer: index.html: <button id="btn">Click Me!</button>
+       Script: const p = document.createElement('p');
+       p.textContent = "New Paragraph"
+       p.addEventListener('mouseover', (event)=>{
+       event.target.style.fontcolor = 'Red'
+       })
+       document.getElementById('btn').append(p)
 
 #### Array Methods : forEach, map, filter, reduce, find, every, some
 
