@@ -181,20 +181,21 @@ Answer: I can add both
             ```
             function sum(arr) {
 
-    sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-    }
-    return sum;
-    }
+            sum = 0;
+            for (let i = 0; i < arr.length; i++) {
 
-function sumforin(arr) {
-sum = 0;
-for (let el of arr) {
-sum += el;
-}
-return sum;
-}
+            sum += arr[i];
+            }
+            return sum;
+            }
+
+            function sumforin(arr) {
+            sum = 0;
+            for (let el of arr) {
+            sum += el;
+            }
+            return sum;
+            }
 
 15. What is the value of `passed` in the following code?
 
