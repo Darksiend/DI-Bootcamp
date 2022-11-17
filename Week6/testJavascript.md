@@ -175,27 +175,28 @@ Answer: I can add both
 14. Do this exercise twice: first with a `for loop`, then with a `for of loop`.
     Console.log the sum of this array
 
-        ```javascript
-           const marks = [67, 60, 89, 90, 67, 42];
-        ```
+            ```javascript
+               const marks = [67, 60, 89, 90, 67, 42];
 
-```javascript
-answer: function sum(arr) {
-  sum = 0;
-  for (let i = 0; i < arr.length; i++) {
+               function sum(arr) {
+
+    sum = 0;
+    for (let i = 0; i < arr.length; i++) {
     sum += arr[i];
-  }
-  return sum;
-}
+    }
+    return sum;
+    }
 
 function sumforin(arr) {
-  sum = 0;
-  for (let el of arr) {
-    sum += el;
-  }
-  return sum;
+sum = 0;
+for (let el of arr) {
+sum += el;
+}
+return sum;
 }
 ```
+
+answer:
 
 15. What is the value of `passed` in the following code?
 
