@@ -72,4 +72,4 @@ SELECT SUM(price)
 FROM users
 INNER JOIN product_orders ON product_orders.user_id = users.user_id
 INNER JOIN items ON product_orders.order_id = items.fk_order_id
-WHERE product_orders.user_id = 2
+WHERE product_orders.user_id = 1

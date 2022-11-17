@@ -17,8 +17,8 @@ SELECT name
 FROM language
 LEFT JOIN film ON language.language_id = film.language_id
 WHERE language.language_id NOT IN
-        (SELECT language_id
-         FROM film);
+                (SELECT language_id
+                 FROM film);
 
 -- Create a new table called new_film with the following columns : id, name. Add some new films to the table.
 
@@ -33,11 +33,11 @@ VALUES (DEFAULT,
 
 
 CREATE TABLE customer_review
-    (review_id SERIAL PRIMARY KEY,
-                              film_id SERIAL REFERENCES new_film(id) ON DELETE CASCADE,
-                                                                               language_id INTEGER REFERENCES language(language_id),
-                                                                                                              title TEXT NOT NULL,
-                                                                                                                         score INTEGER,review_text TEXT,last_update DATE);
+        (review_id SERIAL PRIMARY KEY,
+                                  film_id SERIAL REFERENCES new_film(id) ON DELETE CASCADE,
+                                                                                   language_id INTEGER REFERENCES language(language_id),
+                                                                                                                  title TEXT NOT NULL,
+                                                                                                                             score INTEGER,review_text TEXT,last_update DATE);
 
 
 INSERT INTO customer_review
