@@ -83,7 +83,7 @@ nums[1]
    };
    ```
 
-   x(3,4)
+   Answer:x(3,4)
 
 7. Variables created **without** any keyword, are always global, even if they are created inside a function ? Yes or No and explain
 
@@ -145,6 +145,8 @@ Answer: Hello, JavaScript!
     ☐ click
     ☐ onclick
 
+Answer: I can add both
+
 12. Does the `addEventListener()` method allow you to add many events to the same element?
 
     ```javascript
@@ -152,6 +154,8 @@ Answer: Hello, JavaScript!
     x.addEventListener("click", func2);
     x.addEventListener("mouseout", func3);`
     ```
+
+    Answer: Yes of course!
 
 13. DOM exercise
 
