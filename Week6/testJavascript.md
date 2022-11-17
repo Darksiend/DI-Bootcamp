@@ -318,21 +318,23 @@ Answer: I can add both
 
 24. What will be printed in the console
 
-    ```javascript
-    class Item {
-      constructor(nameProduct, priceProduct) {
-        this.name = nameProduct;
-        this.price = priceProduct;
-      }
+        ```javascript
+        class Item {
+          constructor(nameProduct, priceProduct) {
+            this.name = nameProduct;
+            this.price = priceProduct;
+          }
 
-      displayInfo() {
-        console.log(this.name + " is for $ " + this.price);
-      }
-    }
+          displayInfo() {
+            console.log(this.name + " is for $ " + this.price);
+          }
+        }
 
-    const cake = new Item("Chocolate Cake", 10);
-    cake.displayInfo();
-    ```
+        const cake = new Item("Chocolate Cake", 10);
+        cake.displayInfo();
+        ```
+
+    Answer: 'Chocolate Cake is for $10'
 
 #### Promises
 
