@@ -20,7 +20,7 @@ class Manual extends Book {
 
   checkYear(currentYear) {
     if (currentYear - this.copyright > 5) {
-      this.discarded = "Yes";
+      this.discarded = true;
     }
   }
 }
@@ -32,7 +32,7 @@ class Novel extends Book {
 
   checkUses() {
     if (this.timesCheckedOut > 100) {
-      this.discarded = "Yes";
+      this.discarded = true;
     }
   }
 }
