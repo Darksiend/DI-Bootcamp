@@ -1,7 +1,10 @@
+console.log("111");
 async function addResToDom() {
-  const response = await fetch("http://localhost:3000/");
-  const names = await response.json();
-  console.log(names);
+  await fetch("http://localhost:3000/")
+    .then((res) => res.json())
+    .then((res) => console.log(res));
+
+  console.log("!!!");
 }
 
 addResToDom();
