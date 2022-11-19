@@ -5,9 +5,10 @@ const app = express();
 const PORT = 3000;
 
 const User = { firstname: "John", lastname: "Doe" };
-app.use(express.static("public"));
+app.use("/", express.static("public"));
 app.get("/", (req, res) => {
-  res.send(User);
+  console.log(res);
+  res.send("Ok");
 });
 app.listen(PORT, (err) => {
   err ? console.log(err) : console.log(`listening port ${PORT}`);

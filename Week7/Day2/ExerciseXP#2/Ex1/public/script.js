@@ -1,7 +1,7 @@
-let jsonRes = fetch("http://localhost:3000/").then((res) => res.json());
-console.log("Work");
-function addToDom(jsonRes) {
-  let resDiv = document.createElement("div");
-  resDiv.textContent = jsonRes;
-  document.body.append(resDiv);
+async function addResToDom() {
+  const response = await fetch("http://localhost:3000/");
+  const names = await response.json();
+  console.log(names);
 }
+
+addResToDom();
