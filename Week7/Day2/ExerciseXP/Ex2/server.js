@@ -1,6 +1,5 @@
 const User = { firstname: "John", lastname: "Doe" };
 
-const { log } = require("console");
 const http = require("http");
 
 const server = http
