@@ -5,19 +5,11 @@ const logger = require("morgan");
 const port = 3001;
 
 app.use(logger("dev"));
+app.set("view engine", "ejs");
 
-app.use(express.static("public"));
-app.use(express.static("public/mainPage"));
-app
-  .route("/")
-  .get((req, res) => {
-    console.log(__dirname);
-    res.sendFile(__dirname, "/public/mainPage/index.html");
-  })
-  .post((req, res) => {
-    console.log(req.params);
-    res.send(req.params);
-  });
+app.route("/").get((req, res) => {
+  res.render("main", { nameRestaurant: "Papa Pizza" });
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
