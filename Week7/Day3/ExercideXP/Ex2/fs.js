@@ -11,3 +11,7 @@ fs.appendFile("some.txt", "Appended", function (err) {
   if (err) throw err;
   console.log("Saved!");
 });
+fs.unlinkSync("some.txt", (err) => {
+  if (err) throw err;
+  console.log("Deleted");
+});
