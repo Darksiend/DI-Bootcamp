@@ -11,6 +11,9 @@
     <%- include('../partials/head') %>
   </head>
   <body>
-    <%- include('../partials/header') %>
+    <%- include('../partials/header') %> <%- include('../partials/posts') %> <%-
+    include('../partials/footer') %> <% for(let i=0; i < feed.length; i++) { %>
+    <p><%=feed[i].creator%>:<%=feed[i].title%></p>
+    <% } %>
   </body>
 </html>
