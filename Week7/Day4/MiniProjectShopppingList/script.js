@@ -8,10 +8,16 @@ app.use(logger("dev"));
 
 app.use(express.static("public"));
 app.use(express.static("public/mainPage"));
-app.route("/").get((req, res) => {
-  console.log(__dirname);
-  res.sendFile(__dirname, "/public/mainPage/index.html");
-});
+app
+  .route("/")
+  .get((req, res) => {
+    console.log(__dirname);
+    res.sendFile(__dirname, "/public/mainPage/index.html");
+  })
+  .post((req, res) => {
+    console.log(req.params);
+    res.send(req.params);
+  });
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
