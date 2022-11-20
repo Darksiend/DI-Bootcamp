@@ -1,6 +1,7 @@
 var express = require("express");
 var app = express();
 const morgan = require("morgan");
+const urlencodedParser = express.urlencoded({ extended: false });
 app.use(morgan("dev"));
 app.use(express.static("public"));
 app.use(express.static("error404"));
@@ -25,8 +26,12 @@ app.route("/pic").get((req, res) => {
 });
 
 app.route("/form").get((req, res) => {
-  console.log(__dirname);
-  res.sendFile(__dirname + "/public/error404/index.html");
+  res.sendFile(__dirname + "/public/form/index.html");
+});
+
+app.route("/formData").post(urlencodedParser, (req, res) => {
+  console.log(req.body);
+  res.send(`Hi! ${req.body.email} send you a message: ${req.body.message}`);
 });
 
 app.listen(3000, function () {
