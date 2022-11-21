@@ -8,6 +8,19 @@
       aria-label="Search"
       name="title"
     />
+    <select
+      name="category"
+      class="form-select"
+      aria-label="Default select example"
+    >
+      <option value="all">All</option>
+      <% for(let i=0; i < feed.length; i++) { %> <% for(let j=0; j <
+      feed[i].categories.length; j++) { %>
+      <option value="<%=feed[i].categories[j]%>">
+        <%=feed[i].categories[j]%>
+      </option>
+      <% } %> <% } %>
+    </select>
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
       Search
     </button>

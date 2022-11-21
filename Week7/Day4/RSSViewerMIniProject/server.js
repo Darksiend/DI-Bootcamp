@@ -34,15 +34,22 @@ app
   .post(urlencodedParser, (req, res) => {
     (async () => {
       let feed = await parser.parseURL("https://www.thefactsite.com/feed/");
-      console.log(req.body.title);
+      console.log("Body:", req.body);
+      let resFeedItems = [];
       feed.items.forEach((el, index) => {
         console.log(el.title.includes(req.body.title));
-        if (!el.title.includes(req.body.title)) {
+        if (
+          el.title
+            .toLocaleLowerCase()
+            .includes(req.body.title.toLocaleLowerCase()) &&
+          (el.categories.includes(req.body.category) ||
+            req.body.category === "all")
+        ) {
+          resFeedItems.push(el);
         }
-        console.log("index:", index);
       });
 
-      res.render("pages/search", { feed: feed.items });
+      res.render("pages/search", { feed: resFeedItems });
     })();
   });
 
