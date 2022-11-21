@@ -19,14 +19,38 @@ app.route("/").get((req, res) => {
   (async () => {
     feed = await parser.parseURL("https://www.thefactsite.com/feed/");
     res.render("pages/index", { feed: feed.items });
-    console.log(feed.items);
   })();
 });
 
-app.route("/search").get((req, res) => {
-  res.render("pages/search");
-});
+app
+  .route("/search")
+  .get((req, res) => {
+    (async () => {
+      feed = await parser.parseURL("https://www.thefactsite.com/feed/");
+      console.log(req.params);
+      res.render("pages/search", { feed: feed.items });
+    })();
+  })
+  .post(urlencodedParser, (req, res) => {
+    (async () => {
+      let feed = await parser.parseURL("https://www.thefactsite.com/feed/");
+      console.log(req.body.title);
+      feed.items.forEach((el, index) => {
+        console.log(el.title.includes(req.body.title));
+        if (!el.title.includes(req.body.title)) {
+        }
+        console.log("index:", index);
+      });
+
+      res.render("pages/search", { feed: feed.items });
+    })();
+  });
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
+
+async function getListOfRSS() {
+  return await parser.parseURL("https://www.thefactsite.com/feed/");
+  res.render("pages/search", { feed: feed.items });
+}
