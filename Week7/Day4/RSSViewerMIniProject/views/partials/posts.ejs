@@ -1,1 +1,10 @@
-<div class="posts-container"></div>
+
+  <!-- Content here -->
+
+  <% for(let i=0; i < feed.length; i++) { %>
+    <div class="container  rounded mt-2 bg-light" >
+  <h1><%=feed[i].creator%></h1>
+  <p><%=feed[i].title%><p/>
+  <a href="<%=feed[i].guid%>"><%=feed[i].guid%></a>
+</div> <% } %>
+

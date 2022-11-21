@@ -8,12 +8,11 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>RSS Feed</title>
+
     <%- include('../partials/head') %>
   </head>
   <body>
     <%- include('../partials/header') %> <%- include('../partials/posts') %> <%-
-    include('../partials/footer') %> <% for(let i=0; i < feed.length; i++) { %>
-    <p><%=feed[i].creator%>:<%=feed[i].title%></p>
-    <% } %>
+    include('../partials/footer') %>
   </body>
 </html>

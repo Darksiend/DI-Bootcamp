@@ -9,6 +9,8 @@ const port = 3010;
 
 let feed;
 let listOfFeed;
+app.use(express.static(__dirname + "public"));
+
 app.use(logger("dev"));
 app.set("view engine", "ejs");
 
@@ -19,6 +21,10 @@ app.route("/").get((req, res) => {
     res.render("pages/index", { feed: feed.items });
     console.log(feed.items);
   })();
+});
+
+app.route("/search").get((req, res) => {
+  res.render("pages/search");
 });
 
 app.listen(port, () => {
