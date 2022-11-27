@@ -3,13 +3,13 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Card from "./Card";
-import "bootstrap/dist/css/bootstrap.min.css";
-
+import "./Components/Car";
+import Car from "./Components/Car";
 const root = ReactDOM.createRoot(document.getElementById("root"));
+const carinfo = { name: "Ford", model: "Mustang" };
 root.render(
   <React.StrictMode>
-    <Card />
+    <Car car={carinfo} />
   </React.StrictMode>
 );
 
