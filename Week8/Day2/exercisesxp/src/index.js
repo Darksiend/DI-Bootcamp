@@ -4,12 +4,12 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./Components/Car";
-import Car from "./Components/Car";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const carinfo = { name: "Ford", model: "Mustang" };
+
 root.render(
   <React.StrictMode>
-    <Car car={carinfo} />
+    <App />
   </React.StrictMode>
 );
 

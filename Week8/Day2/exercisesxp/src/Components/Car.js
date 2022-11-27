@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 
 class Car extends Component {
-  render() {
+  constructor(props) {
+    super(props);
+    this.state = { color: "Red" };
+  }
+  render(props) {
     return (
       <div>
         <header>
-          This car is {this.props.car.name} {this.props.car.model} color -{" "}
-          {this.state}
+          This car is {this.props.name} :{this.props.model} color -{" "}
+          {this.state.color}
         </header>
-        <button type="button" onClick={this.changeColor}>
-          {" "}
-          Change color
-        </button>
       </div>
     );
   }
