@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-
+import Button from "@mui/material/Button";
+import { Grid } from "@mui/material";
+import "./App.css";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -14,13 +16,13 @@ class App extends Component {
   }
   render(props) {
     return (
-      <div>
+      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         {this.state.languages.map((item) => (
-          <div className="voteItem">
-            {item.votes} {item.name} <button>+</button>
-          </div>
+          <Grid item xs={4}>
+            {item.votes} {item.name} <Button variant="outlined">+</Button>
+          </Grid>
         ))}
-      </div>
+      </Grid>
     );
   }
 }
