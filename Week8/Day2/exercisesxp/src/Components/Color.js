@@ -7,12 +7,13 @@ class Color extends Component {
   }
 
   changeColor = () => {
-    console.log("!!!!!!");
+    setTimeout(() => {
+      this.setState({ color: "Yellow" });
+    }, 5000);
   };
 
   componentDidMount() {
-    console.log("Added");
-    setTimeout(changeColor, 5000);
+    this.changeColor();
   }
 
   render() {
