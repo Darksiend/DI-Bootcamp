@@ -12,6 +12,7 @@ class Events extends Component {
       buttonText: this.state.isToggleOn ? "Off" : "On",
     });
   };
+
   clickMe = () => {
     alert("I was clicked!");
   };
@@ -20,6 +21,7 @@ class Events extends Component {
       alert(event.target.value);
     }
   };
+
   render() {
     return (
       <div>
