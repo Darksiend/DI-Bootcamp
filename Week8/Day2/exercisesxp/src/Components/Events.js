@@ -3,20 +3,17 @@ import React, { Component } from "react";
 class Events extends Component {
   constructor(props) {
     super(props);
-    this.state = { isToggleOn: true };
+    this.state = { isToggleOn: true, buttonText: "On" };
   }
 
-  render() {
-    return (
-      <div>
-        <button type="button" onClick={this.clickMe}>
-          Click Me!
-        </button>
-        <input onKeyPress={this.handleKeyPress} />
-        <button type="button" onClick={this.toggle}></button>
-      </div>
-    );
-  }
+  toggle = () => {
+    this.setState({
+      isToggleOn: !this.state.isToggleOn,
+      buttonText: this.state.isToggleOn ? "Off" : "On",
+    });
+
+    console.log(this.state.isToggleOn);
+  };
   clickMe = () => {
     alert("I was clicked!");
   };
@@ -25,11 +22,19 @@ class Events extends Component {
       alert(event.target.value);
     }
   };
-  toggle = () => {
-    this.setState({ isToggleOn: !this.state.isToggleOn });
-
-    console.log(this.state.isToggleOn);
-  };
+  render() {
+    return (
+      <div>
+        <button type="button" onClick={this.clickMe}>
+          Click Me!
+        </button>
+        <input onKeyPress={this.handleKeyPress} />
+        <button type="button" onClick={this.toggle}>
+          {this.state.buttonText}
+        </button>
+      </div>
+    );
+  }
 }
 
 export default Events;
