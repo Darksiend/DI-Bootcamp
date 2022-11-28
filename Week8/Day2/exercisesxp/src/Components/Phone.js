@@ -11,7 +11,7 @@ class Phone extends Component {
     };
   }
   changeColor = () => {
-    this.setState({ color: "Blue" });
+    this.setState({ color: "blue" });
   };
   render() {
     return (
