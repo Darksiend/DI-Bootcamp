@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 
 class Events extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { isToggleOn: true };
+  }
+
   render() {
     return (
       <div>
@@ -8,6 +13,7 @@ class Events extends Component {
           Click Me!
         </button>
         <input onKeyPress={this.handleKeyPress} />
+        <button type="button" onClick={this.toggle}></button>
       </div>
     );
   }
@@ -18,6 +24,11 @@ class Events extends Component {
     if (event.key === "Enter") {
       alert(event.target.value);
     }
+  };
+  toggle = () => {
+    this.setState({ isToggleOn: !this.state.isToggleOn });
+
+    console.log(this.state.isToggleOn);
   };
 }
 
