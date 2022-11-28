@@ -11,8 +11,6 @@ class Events extends Component {
       isToggleOn: !this.state.isToggleOn,
       buttonText: this.state.isToggleOn ? "Off" : "On",
     });
-
-    console.log(this.state.isToggleOn);
   };
   clickMe = () => {
     alert("I was clicked!");
