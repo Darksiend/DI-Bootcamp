@@ -12,12 +12,21 @@ class Color extends Component {
     }, 5000);
   };
 
+  changeToBlue = () => {
+    this.setState({ color: "Blue" });
+  };
+
   componentDidMount() {
     this.changeColor();
   }
 
   render() {
-    return <h1>My favorite color is {this.state.color}</h1>;
+    return (
+      <div>
+        <h1>My favorite color is {this.state.color}</h1>
+        <button onClick={this.changeToBlue}>Change to blue</button>
+      </div>
+    );
   }
 }
 
