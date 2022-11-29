@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import BuggyCounter from "./Components/BuggyCounter";
 import ErrorBoundary from "./Components/ErrorBoundary";
+import Color from "./Components/Color";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -12,6 +13,9 @@ root.render(
     {/*<App />*/}
     <ErrorBoundary>
       <BuggyCounter />
+      <Color />
+      <div id="prev"></div>
+      <div id="new"></div>
     </ErrorBoundary>
   </React.StrictMode>
 );
