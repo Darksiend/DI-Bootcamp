@@ -1,0 +1,14 @@
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.inputs-container > input {
+  height: 28px;
+  width: 50%;
+  margin-top: 8px;
+}
+fieldset {
+  width: 25%;
+}
