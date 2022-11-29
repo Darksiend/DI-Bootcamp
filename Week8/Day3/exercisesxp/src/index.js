@@ -3,13 +3,16 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import BuggyCounter from "./BuggyCounter";
+import BuggyCounter from "./Components/BuggyCounter";
+import ErrorBoundary from "./Components/ErrorBoundary";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/*<App />*/}
-    <BuggyCounter />
+    <ErrorBoundary>
+      <BuggyCounter />
+    </ErrorBoundary>
   </React.StrictMode>
 );
 

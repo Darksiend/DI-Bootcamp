@@ -8,9 +8,14 @@ class BuggyCounter extends Component {
 
   handleClick = () => {
     console.log("Clicked");
+
     this.setState({ counter: this.state.counter + 1 });
   };
   render() {
+    if (this.state.counter === 5) {
+      // Simulate a JS error
+      throw new Error("I crashed!");
+    }
     return (
       <div>
         <h1>{this.state.counter}</h1>
