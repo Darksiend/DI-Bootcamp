@@ -8,7 +8,7 @@ class Body extends Component {
       LastName: "",
       age: "",
       Destination: "",
-      Gender: "Male",
+      Gender: "",
     };
   }
   handler = (e) => {
@@ -47,7 +47,6 @@ class Body extends Component {
                 name="Gender"
                 onChange={this.handler}
                 value="Male"
-                checked
               />
               <label htmlFor="male">Male</label>
               <input
