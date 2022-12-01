@@ -6,9 +6,15 @@ const Quote = () => {
   const [oldQoutes, setoldQoutes] = useState([]);
   const getRandomQuote = () => {
     let newQuote = quotes[Math.floor(Math.random() * quotes.length)];
-    while (oldQoutes.includes(newQuote)) {
-      newQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+    if (oldQoutes.length === quotes.length) {
+      newQuote = { author: "No more Quotes for today!" };
+    } else {
+      while (oldQoutes.includes(newQuote)) {
+        newQuote = quotes[Math.floor(Math.random() * quotes.length)];
+      }
     }
+
     setoldQoutes([...oldQoutes, newQuote]);
     console.log(newQuote);
     console.log(oldQoutes);
