@@ -5,9 +5,12 @@ const Quote = () => {
   const [data, setData] = useState(quotes);
   const [oldQoutes, setoldQoutes] = useState([]);
   const getRandomQuote = () => {
-    let quote = quotes[Math.floor(Math.random() * quotes.length)];
-    setoldQoutes([...oldQoutes, quote]);
-    console.log(quote);
+    let newQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    while (oldQoutes.includes(newQuote)) {
+      newQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    }
+    setoldQoutes([...oldQoutes, newQuote]);
+    console.log(newQuote);
     console.log(oldQoutes);
   };
 
