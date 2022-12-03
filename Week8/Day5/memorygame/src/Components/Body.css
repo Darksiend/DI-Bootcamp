@@ -1,0 +1,10 @@
+.CardsContainer {
+  width: 100%;
+  border: 1px red solid;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.CardContainer {
+  width: 20%;
+}
