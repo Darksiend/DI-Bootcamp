@@ -1,3 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-
-export default configureStore({ reducer: {} });
+import transactionReducer from "./transactionsSlice";
+export default configureStore({
+  reducer: { transactions: transactionReducer },
+});
