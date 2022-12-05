@@ -9,10 +9,24 @@ function App() {
   const [holdingName, setHoldingName] = useState("");
   const [amount, setAmount] = useState("");
   const dispatch = useDispatch();
-  const list = useSelector((state) => state.transactions);
-  const addTransactionToLocalStore = () => {};
+  const { list, index } = useSelector((state) => state.transactions);
+  const addTransactionToLocalStore = (obj) => {
+    console.log(localStorage.getItem("transactions"));
+    let transactions = JSON.parse(localStorage.getItem("transactions") || "[]");
+    console.log(transactions);
+    transactions.push(obj);
+    localStorage.setItem("transactions", JSON.stringify(transactions));
+    console.log(localStorage);
+  };
+
   useEffect(() => {
     console.log(localStorage);
+    let transactions = JSON.parse(localStorage.getItem("transactions") || "[]");
+    if (transactions) {
+      transactions.forEach((transaction) => {
+        dispatch(addTransaction(transaction));
+      });
+    }
   }, []);
   return (
     <>
@@ -41,7 +55,13 @@ function App() {
         placeholder="Amount"
       />
       <button
-        onClick={() =>
+        onClick={() => {
+          addTransactionToLocalStore({
+            an: an,
+            fsc: fsc,
+            holdingName: holdingName,
+            amount: amount,
+          });
           dispatch(
             addTransaction({
               an: an,
@@ -49,8 +69,8 @@ function App() {
               holdingName: holdingName,
               amount: amount,
             })
-          )
-        }
+          );
+        }}
       >
         Add Transaction
       </button>
