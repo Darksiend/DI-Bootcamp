@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import SearchComponent from "./components/SearchComponent";
+import ImagesGallery from "./components/ImagesGallery";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchPhotos } from "./redux/photoSlice";
 function App() {
+  const dispatch = useDispatch();
+
+  const { photos, status } = useSelector((state) => state.photos);
+  console.log(photos, status);
+  const isLoading = status === "loading";
+  useEffect(() => {
+    dispatch(fetchPhotos());
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SearchComponent />
+      {isLoading ? <h1>Loading</h1> : <ImagesGallery photos={photos} />}
     </div>
   );
 }
