@@ -4,6 +4,7 @@ import ImagesGallery from "./components/ImagesGallery";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchPhotos } from "./redux/photoSlice";
+import NavBar from "./components/NavBar";
 function App() {
   const dispatch = useDispatch();
 
@@ -16,6 +17,7 @@ function App() {
   return (
     <div className="App">
       <SearchComponent />
+      <NavBar />
       {isLoading ? <h1>Loading</h1> : <ImagesGallery photos={photos} />}
     </div>
   );

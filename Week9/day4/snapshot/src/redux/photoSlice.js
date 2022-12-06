@@ -1,15 +1,24 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
 import axios from "../axios/axios";
 
 export const fetchPhotos = createAsyncThunk("photos/fetchPhotos", async () => {
+  console.log(state);
   const { data } = await axios.get("?query=nature&per_page=10");
   return data.photos;
 });
+
+export const fetchPhotoByText = (text) => async (dispatch) => {
+  const { data } = await axios.get(`?query=${text}&per_page=10`);
+  console.log(data);
+  dispatch(photosLoaded(data.photos));
+};
+
 export const photoSlice = createSlice({
   name: "robo",
   initialState: {
     photos: [],
     status: "loading",
+    searchText: "Apple",
   },
   reducers: {
     filterRobots(state, action) {
@@ -18,6 +27,15 @@ export const photoSlice = createSlice({
         robot.name.toLowerCase().includes(action.payload.toLowerCase())
       );
       console.log();
+    },
+
+    getSearchText(state, action) {},
+
+    setPhotosFromRequest(state, action) {},
+
+    photosLoaded(state, action) {
+      state.status = "loaded";
+      state.photos = action.payload;
     },
   },
   extraReducers: {
@@ -34,5 +52,5 @@ export const photoSlice = createSlice({
     },
   },
 });
-export const { filterRobots } = photoSlice.actions;
+export const { filterRobots, getSearchText, photosLoaded } = photoSlice.actions;
 export default photoSlice.reducer;

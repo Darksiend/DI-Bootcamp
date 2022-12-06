@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "./Image";
+import "./ImageGallery.css";
 
 const ImagesGallery = (props) => {
   return (
