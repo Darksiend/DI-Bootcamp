@@ -1,11 +1,25 @@
 import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
 import axios from "../axios/axios";
 
-export const fetchPhotos = createAsyncThunk("photos/fetchPhotos", async () => {
-  console.log(state);
-  const { data } = await axios.get("?query=nature&per_page=10");
-  return data.photos;
-});
+export const fetchPhotos = createAsyncThunk(
+  "photos/fetchPhotos",
+  async (text) => {
+    // console.log(text);
+    if (text) {
+      console.log(text);
+    }
+    const { data } = await axios.get("?query=nature&per_page=10");
+    return data.photos;
+  }
+);
+
+// const exampleThunkFunction = (dispatch, getState) => {
+//   const stateBefore = getState()
+//   console.log(`Counter before: ${stateBefore.counter}`)
+//   dispatch(increment())
+//   const stateAfter = getState()
+//   console.log(`Counter after: ${stateAfter.counter}`)
+// }
 
 export const fetchPhotoByText = (text) => async (dispatch) => {
   const { data } = await axios.get(`?query=${text}&per_page=10`);

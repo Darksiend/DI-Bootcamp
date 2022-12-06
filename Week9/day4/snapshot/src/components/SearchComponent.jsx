@@ -9,10 +9,17 @@ import store from "../redux/store";
 
 const SearchComponent = () => {
   const dispatch = useDispatch();
+  const { searchText } = useSelector((state) => state.photos);
+  const inputHandler = (event, text) => {};
+  console.log(searchText);
   return (
     <>
-      <input type="text" />
-      <button onClick={() => dispatch(fetchPhotoByText("sun"))}>Search</button>
+      <input type="text" onChange={() => inputHandler} />
+      <button
+        onClick={(event) => dispatch(fetchPhotos({ searchText: searchText }))}
+      >
+        Search
+      </button>
     </>
   );
 };
