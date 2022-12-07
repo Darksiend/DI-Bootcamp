@@ -5,11 +5,15 @@ export const fetchPhotos = createAsyncThunk(
   "photos/fetchPhotos",
   async (text) => {
     // console.log(text);
+
     if (text) {
       console.log(text);
+      const { data } = await axios.get(`?query=${text.searchText}&per_page=10`);
+      return data.photos;
+    } else {
+      const { data } = await axios.get("?query=nature&per_page=10");
+      return data.photos;
     }
-    const { data } = await axios.get("?query=nature&per_page=10");
-    return data.photos;
   }
 );
 
@@ -43,9 +47,9 @@ export const photoSlice = createSlice({
       console.log();
     },
 
-    getSearchText(state, action) {},
-
-    setPhotosFromRequest(state, action) {},
+    setSearchText(state, action) {
+      state.searchText = action.payload;
+    },
 
     photosLoaded(state, action) {
       state.status = "loaded";
@@ -66,5 +70,5 @@ export const photoSlice = createSlice({
     },
   },
 });
-export const { filterRobots, getSearchText, photosLoaded } = photoSlice.actions;
+export const { filterRobots, setSearchText, photosLoaded } = photoSlice.actions;
 export default photoSlice.reducer;

@@ -9,7 +9,7 @@ function App() {
   const dispatch = useDispatch();
 
   const { photos, status } = useSelector((state) => state.photos);
-  console.log(photos, status);
+
   const isLoading = status === "loading";
   useEffect(() => {
     dispatch(fetchPhotos());
