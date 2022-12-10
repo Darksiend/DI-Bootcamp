@@ -1,10 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "../../axios";
 
-export const fetchPosts = createAsyncThunk(
-  "films/fetchPosts",
-  async (state) => {
-    const { data } = await axios.get("&s=man");
+export const fetchPostsByTitle = createAsyncThunk(
+  "films/fetchPostsByTitle",
+  async (text) => {
+    const { data } = await axios.get(`?apikey=e14045af&s=${text}`);
     return data;
   }
 );
@@ -17,6 +17,19 @@ const filmsSlice = createSlice({
   name: "films",
   initialState,
   reducers: {},
+  extraReducers: {
+    [fetchPostsByTitle.pending]: (state) => {
+      state.films.status = "loading";
+    },
+    [fetchPostsByTitle.fulfilled]: (state, action) => {
+      state.films.items = action.payload;
+      state.films.status = "loaded";
+    },
+    [fetchPostsByTitle.rejected]: (state) => {
+      state.films.items = [];
+      state.films.status = "error";
+    },
+  },
 });
 
 export const filmsReducer = filmsSlice.reducer;
