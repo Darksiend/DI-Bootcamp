@@ -15,7 +15,6 @@ const FullFilm = () => {
       .get(`?apikey=e14045af&i=${id}`)
       .then((r) => {
         setData(r.data);
-
         setIsLoading(false);
       })
       .catch((err) => {
@@ -23,18 +22,19 @@ const FullFilm = () => {
         alert("Error with getting Film!");
       });
   }, []);
-
+  console.log(data);
   return (
     <>
       {isLoading ? (
         <div className="donut"></div>
       ) : (
         <div className="fullFilm">
-          <img src={Poster} alt="" />
-          <h1>{Title}</h1>
-          <div>Release Year:{Year}</div>
-          <div> Runtime:{Runtime}</div>
-          <div></div>
+          <img src={data.Poster} alt="" />
+          <h1>{data.Title}</h1>
+          <div>Release Year:{data.Year}</div>
+          <div> Runtime:{data.Runtime}</div>
+          <div>Country:{data.Country}</div>
+          <div>iMDB Rating:{data.imdbRating}</div>
         </div>
       )}
     </>

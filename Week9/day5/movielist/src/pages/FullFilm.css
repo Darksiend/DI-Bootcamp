@@ -16,3 +16,8 @@
   height: 30px;
   animation: donut-spin 1.2s linear infinite;
 }
+.fullFilm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
