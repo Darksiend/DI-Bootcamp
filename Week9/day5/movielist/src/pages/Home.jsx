@@ -31,7 +31,7 @@ const Home = () => {
         {text.length < 3 ? (
           <div></div>
         ) : isFilmsLoading ? (
-          <div>Loading...</div>
+          <div className="donut"></div>
         ) : films.items.Search && films.items.Search.length > 1 ? (
           films.items.Search.map((film) => <Card film={film} />)
         ) : (

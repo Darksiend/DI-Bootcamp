@@ -9,8 +9,17 @@ export const fetchPostsByTitle = createAsyncThunk(
   }
 );
 
+export const fetchPostsByTitle = createAsyncThunk(
+  "films/fetchPostsByTitle",
+  async (text) => {
+    const { data } = await axios.get(`?apikey=e14045af&s=${text}`);
+    return data;
+  }
+);
+
 const initialState = {
   films: { items: [], status: "loading" },
+  selectedFilm: { item: [], status: "loading" },
 };
 
 const filmsSlice = createSlice({
