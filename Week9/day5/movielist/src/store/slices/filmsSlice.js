@@ -4,8 +4,7 @@ import axios from "../../axios";
 export const fetchPosts = createAsyncThunk(
   "films/fetchPosts",
   async (state) => {
-    const { data } = await axios.get("/posts");
-
+    const { data } = await axios.get("&s=man");
     return data;
   }
 );
