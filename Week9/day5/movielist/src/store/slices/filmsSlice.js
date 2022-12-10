@@ -9,10 +9,10 @@ export const fetchPostsByTitle = createAsyncThunk(
   }
 );
 
-export const fetchPostsByTitle = createAsyncThunk(
-  "films/fetchPostsByTitle",
-  async (text) => {
-    const { data } = await axios.get(`?apikey=e14045af&s=${text}`);
+export const fetchPostsByID = createAsyncThunk(
+  "films/fetchPostsByID",
+  async (id) => {
+    const { data } = await axios.get(`?apikey=e14045af&i=${id}`);
     return data;
   }
 );
